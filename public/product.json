@@ -1,0 +1,92 @@
+[
+    {   
+        "cid" : "1",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8JjBWZVtUIhCPiA3eEZtOLobm81eP2HeZYA&usqp=CAU",
+        "product_name" : "Complete sofa set",
+        "condition": "used",
+        "used_time": "1 year 2 month",
+        "market_price": "500$",
+        "selling_price": "380$",
+        "information": "This is vey good looking and product quality is good. i used this Complete sofa set 1 year 2 month.service is very well i am very satisfied for this product service.now i am sell this for my  financial problem"
+    },
+    {   
+        "cid" : "1",
+        "image":"https://media.istockphoto.com/id/1355705410/photo/relax-at-home-cup-of-hot-tea-and-book-on-coffee-table-by-the-sofa.jpg?b=1&s=170667a&w=0&k=20&c=8EbLohIbOwYsV-YpR0akowxKyrbdQLe8Or3NwQuekkQ=",
+        "product_name" : "Coffe table",
+        "condition": "used",
+        "used_time": " 20  dayes",
+        "market_price": "745$",
+        "selling_price": "520$",
+        "information": "This product quality is good. i used this Coffe table 20 dayes.service is very well i am very satisfied for this product service.now i am sell this for my  financial problem "
+    },
+    {   
+        "cid" : "1",
+        "image":"https://plus.unsplash.com/premium_photo-1674935640317-919c9f9f91ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29mZmVlJTIwdGFibGV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60",
+        "product_name" : "Sofa",
+        "condition": "used",
+        "used_time": "9 month",
+        "market_price": "350$",
+        "selling_price": "270$",
+        "information": "This product quality is good. i used this Sofa  used in only 9 month.service is very well i am very satisfied for this product service.now i am sell this for my financial problem"
+    },
+    {   
+        "cid" : "2",
+        "image":"https://img.waimaoniu.net/1951/1951-202111171003341533.jpg",
+        "product_name" : "Waredrop",
+        "condition": "used",
+        "used_time": " 2 month",
+        "market_price": "320$",
+        "selling_price": "209$",
+        "information": "To allow parents to enjoy everyday entertainment activities, sliding wardrobe doors are included into the bay window's design. These doors are connected to dressing tables and TV cabinets.The desk and wardrobe are joined together as a single unit, and the space on the window sill is also effectively utilized. The sliding wardrobe doors maintain the traditional black and white design."
+    },
+    {   
+        "cid" : "2",
+        "image":"http://cdn.home-designing.com/wp-content/uploads/2018/02/Tufted-Bedroom-Rocking-Chair-600x600.jpg",
+        "product_name" : "Bed Room Rooking Chair",
+        "condition": "used",
+        "used_time": "1 year 9 month 2 days",
+        "market_price": "60$",
+        "selling_price": "40$",
+        "information": "This cosy rocking chair has a tufted back and deep cushioning. Swaying back and forth in this whilst lost a good book you might never go to bed."
+    },
+    {   
+        "cid" : "2",
+        "image":"http://cdn.home-designing.com/wp-content/uploads/2018/02/chairs-bedroom-600x600.jpg",
+        "product_name" : "Bed Room Side chair",
+        "condition": "used",
+        "used_time": "2 year 2 month",
+        "market_price": "90$",
+        "selling_price": "60$",
+        "information": "The most comfy bedroom chairs have plush fabric and a supportive back, this chair has both. A broad high back makes this a comfortable option for those on the taller side too."
+    },
+    {   
+        "cid" : "3",
+        "image":"https://cdn.shopify.com/s/files/1/0712/5018/2439/products/S6e0b69297eba4ecb91b3e61a913bdbbf9.jpg?v=1676377013&width=360",
+        "product_name" : "Fruit juice Belender",
+        "condition": "used",
+        "used_time": " 2 month",
+        "market_price": "160$",
+        "selling_price": "99$",
+        "information": "This product quality is good. i used this Fruit juice Belender 2 month.service is very well i am very satisfied for this product service.now i am sell this for my  financial problem"
+    },
+    {   
+        "cid" : "3",
+        "image":"https://media.istockphoto.com/id/1399160717/photo/refrigerator-standing-in-empty-room-free-copy-space-for-text-or-other-objects-household.jpg?s=612x612&w=0&k=20&c=U9H5GlhjPKbCuNRaOpO1T2H3vbnexjonA2RR-FSf_84=",
+        "product_name" : "Modern kitchen refrigerator",
+        "condition": "used",
+        "used_time": "2 year 2 month",
+        "market_price": "420$",
+        "selling_price": "290$",
+        "information": "This product quality is good. i used this Modern kitchen refrigerator 2 year 2 month.service is very well i am very satisfied for this product service.now i am sell this for my  financial problem"
+    },
+    {   
+        "cid" : "3",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZVF5o7lPyAxbzuTurMc6JsjRhFe0OBVvEPA&usqp=CAU",
+        "product_name" : "Micro oven",
+        "condition": "used",
+        "used_time": "1 year 9 month",
+        "market_price": "200$",
+        "selling_price": "125$",
+        "information": "This product quality is good. i used this Micro oven 1 year and 8 month.service is very well i am very satisfied for this product service.now i am sell this for my  financial problem "
+    }
+]
