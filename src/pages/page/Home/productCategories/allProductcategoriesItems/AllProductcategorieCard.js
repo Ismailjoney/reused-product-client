@@ -15,7 +15,6 @@ const AllProductcategorieCard = ({ categorieItem }) => {
                 </div>
                 <p className='font-bold'>Information : {information}</p>
                 <div className="card-actions justify-end">
-                    
                     < label htmlFor="booking-modal" className="btn btn-primary" >  Buy Now</label >
                 </div>
             </div>

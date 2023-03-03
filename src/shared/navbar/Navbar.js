@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/ContextProvider';
 
 const Navbar = () => {
+    const{user, logOut} = useContext(AuthContext)
+
     const menubar = <>
-    <Link to='/'>Home</Link>
+    <li><Link to='/'>Home</Link></li>
+    <li><Link to='/dashbord'>DashBord</Link></li>
+    
+              
     </>
+
+    const handdleLogOut = () =>{
+        logOut()
+    }
+
 
     return (
         <div className="navbar bg-base-100">
@@ -25,8 +36,18 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                 {
+                    user?.uid ?
+                     <button onClick={handdleLogOut}>
+                         <Link to='/login'>LogOut</Link>
+                     </button>
+                     :
+                     <Link to='/login'>LOG IN</Link>
+                 }
             </div>
+            <label htmlFor="drawer-btn"  tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
         </div>
     );
 };
