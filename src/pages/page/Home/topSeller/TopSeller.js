@@ -18,7 +18,8 @@ import SellerRatting from './SellerRatting';
 const TopSeller = () => {
     return (
         <div className='mt-8  '>
-            <h2 className="text-3xl  font-bold text-center my-8">Our Top Seller</h2>
+            <h2 className="text-3xl  font-bold text-center my-4">Our Top Seller</h2>
+            <p className='text-2xl text-center font-bold   my-8'>Here is a list of our top sellers. Last month's selected top sellers. We select each month's top rated sellers and put a poster with their picture on our website. If you want to see yourself on our website, provide all the information about your product. If you sell products and want to be seen on our website, you must be a top seller</p>
             <Swiper
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -29,6 +30,7 @@ const TopSeller = () => {
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log('')}
                 onSlideChange={() => console.log('chnge' )}
+                className='mt-10'
             >
                 <SwiperSlide>
                     <img className="mask mask-circle"  src={manone} alt="" />
