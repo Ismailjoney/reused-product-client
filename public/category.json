@@ -1,21 +1,21 @@
 [
     {
         "categoryId" : 1,
-        "product_name": "Drawing Room product",
+        "product_categories": "Drawing Room product",
         "image":"https://st.hzcdn.com/fimgs/pictures/living-rooms/contemporary-living-room-castanes-architects-ps-img~f7a1f03d01420e60_8120-1-366bd8b-w360-h360-b0-p0.jpg",
         "condition": "used",
         "information": "This is a Drawing Room product categorys.you can buy or sell your product in this product category.if you have seller account you can sell your product and if you buyer in this website you can  parchess your product"
     },
     {
         "categoryId" : 2,
-        "product_name": "Bed Room product",
+        "product_categories": "Bed Room product",
         "image":"http://cdn.home-designing.com/wp-content/uploads/2017/09/Platform-bed-300x250.jpg",
         "condition": "used",
         "information": "This is a Bed Room product categorys.you can buy or sell your product in this product category.if you have seller account you can sell your product and if you buyer in this website you can  parchess your product"
     },
     {
         "categoryId" : 3,
-        "product_name": "kitchen product",
+        "product_categories": "kitchen product",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZVF5o7lPyAxbzuTurMc6JsjRhFe0OBVvEPA&usqp=CAU",
         "condition": "used",
         "information": "This is a kitchen room product categorys.you can buy or sell your product in this product category.if you have seller account you can sell your product and if you buyer in this website you can  parchess your product"

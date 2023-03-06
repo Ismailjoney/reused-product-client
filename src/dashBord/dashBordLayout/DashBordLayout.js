@@ -13,6 +13,7 @@ const DashBordLayout = () => {
                     {/* <!-- Page content here --> */}
                     <Outlet></Outlet>
                     {/* <label htmlFor="drawer-btn" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
+                      
 
                 </div>
                 <div className="drawer-side">

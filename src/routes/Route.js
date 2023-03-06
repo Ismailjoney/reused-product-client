@@ -50,7 +50,8 @@ export const route=  createBrowserRouter([
             },
             {
                 path:'/dashbord/myorder',
-                element:<BuyerOrder></BuyerOrder>
+                element:<BuyerOrder></BuyerOrder>,
+               
             },
             {
                 path:'/dashbord/myaddedproducts',

@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../context/ContextProvider';
 
 const DashBordInfo = () => {
+    const { user } = useContext(AuthContext)
+    const [userInfo, setUserInfo] = useState('')
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/users?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data =>  setUserInfo(data))
+    }, [user?.email])
+
+
     return (
         <div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet aperiam porro veritatis aliquid eius alias non quos explicabo accusamus laudantium? Sequi eaque ea, eum labore, a velit itaque reprehenderit, perferendis doloribus minima voluptas consequatur pariatur impedit nostrum alias at sunt vel molestiae totam quis inventore nam fugit commodi! Laboriosam tempora atque sunt ea, adipisci quod error iusto? Facilis, magni accusantium! Pariatur nostrum odio dolorum quos quam, quia deserunt rem, nihil, minus doloremque laudantium voluptatem temporibus soluta! Quia asperiores vero dicta quasi nihil nisi illo explicabo, cum unde, vel iste. Ex laborum doloremque rem corrupti et pariatur saepe praesentium, sapiente ducimus.</p>
+            <div className="card w-96 bg-base-700 shadow-xl">
+                <figure className="px-10 pt-10">
+                <img className="mask mask-circle" src={userInfo.image}/>
+                     
+                </figure>
+                <div className="card-body items-center ">
+                    <h2 className="card-title">Name :{userInfo?.name}</h2>
+                    <p>Email :{userInfo?.email}</p>
+                    <p>Account Type : {userInfo?.role}</p>
+
+                </div>
+            </div>
         </div>
     );
 };

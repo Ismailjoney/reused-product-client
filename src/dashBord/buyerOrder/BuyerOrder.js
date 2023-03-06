@@ -1,10 +1,62 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../context/ContextProvider';
+import Loading from '../../shared/loading/Loading';
+import BuyerOrderCard from './BuyerOrderCard';
 
 const BuyerOrder = () => {
+    const {user} = useContext(AuthContext)
+
+    const {data:  bookingProducts = [],isLoading ,refetch}  = useQuery({
+        queryKey: ['mybookings', user?.email],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/mybookings?email=${user?.email}`)
+            const data = await res.json()
+            return data;
+        }
+    })
+
+
+    const handleDelete = (id) => {
+        fetch(`http://localhost:5000/bookings/${id}`, {
+            method: 'DELETE',
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('bikehutAccessToken')}`
+
+            // }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    refetch()
+                    toast.error('Order Delete SuccessFully')
+            }
+        })
+       
+    }
+
+    if(isLoading){
+        return <Loading></Loading>
+    }
+
     return (
         <div>
-            <h2 className="text-3xl text-bold text-center">MY ORDER</h2>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur omnis animi nesciunt tempore expedita nemo pariatur sed est accusantium, natus soluta corrupti magnam illo rerum culpa quae fuga ut facilis ea maxime fugit iste repellendus! Quibusdam labore adipisci expedita quidem reprehenderit reiciendis sed eligendi et, quaerat explicabo repellat architecto nemo odit in? Cum sapiente minima quis unde facilis. Debitis, quis delectus. Deleniti fugit aliquam fugiat quia iure voluptate beatae quidem, laborum velit voluptates qui alias reprehenderit cupiditate, veritatis, nesciunt dolores eum recusandae ad? Voluptate adipisci enim animi minus? Ad deleniti, dolorum doloremque voluptatem quas quis aliquid? Sit architecto earum deserunt?
+            <h2 className="text-3xl text-bold  ">My Order {bookingProducts.length}</h2>
+             
+            
+             <div>
+                {
+                    
+                   bookingProducts.map(bookingProduct => <BuyerOrderCard
+                    key={bookingProduct._id}
+                    bookingProduct={bookingProduct}
+                    handleDelete={handleDelete}
+                   ></BuyerOrderCard>)  
+                  
+                     
+                }
+             </div>
         </div>
     );
 };
