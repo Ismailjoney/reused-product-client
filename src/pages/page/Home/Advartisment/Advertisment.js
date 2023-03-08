@@ -1,11 +1,60 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../../context/ContextProvider';
+import AdvertisementModal from './advertisementModal/AdvertisementModal';
+import AdvertismentProductCard from './AdvertismentProductCard';
 
 const Advertisment = () => {
+    const {user} = useContext(AuthContext)
+    const [advertiseProducts, setAdvertiseProducts] = useState([])
+    const [modalBooking, setModalBooking] = useState(null)
+
+    useEffect(() => {
+        fetch('http://localhost:5000/advertismentproduct')
+            .then(res => res.json())
+            .then(data => {
+                const products = data.filter(product => product.advertise === 'true');
+                const unsold = products.filter(unsoldpdct => unsoldpdct.status !== "sold")
+                setAdvertiseProducts(unsold)
+            })
+
+    }, [])
+
+
+     
+
+
+
+
     return (
-        <div className='mt-10'>
-            <h2 className="text-3xl  font-bold text-center">Advertisment</h2>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit dicta a molestias consequuntur ut sed exercitationem? Tenetur impedit, nostrum qui, mollitia nulla neque veniam, corporis reprehenderit rem ducimus repudiandae molestiae.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id qui quas, corrupti, numquam fugit alias exercitationem eaque commodi dolorum itaque quasi iste a repellendus nemo quibusdam. Labore veritatis nostrum soluta velit. Veritatis ratione repellendus recusandae adipisci aliquid itaque ut saepe voluptatem laborum fugit aut, totam impedit quis, dolores eius, dignissimos sequi. Fugiat harum esse perferendis autem facilis dolorum corporis nesciunt sint nisi odit! Libero cupiditate aliquam ducimus aspernatur assumenda. Modi sapiente quasi reprehenderit maiores omnis molestiae minima provident soluta qui.
+        <div>
+            {
+                advertiseProducts.length === 0 ? <></>
+                    :
+                    <div className='mt-10'>
+                        <h2 className="text-3xl  font-bold text-center">Advertisment</h2>
+                        <div className='grid grid-cols-1 gap-6 lg:grid-cols-3'>
+                            {
+                                advertiseProducts.map(advertiseProduct => <AdvertismentProductCard
+                                    key={advertiseProduct._id}
+                                    advertiseProduct={advertiseProduct}
+                                    setModalBooking={setModalBooking}
+                                    user={user}
+                                     
+                                ></AdvertismentProductCard>)
+                            }
+                        </div>
+                    </div>
+            }
+            {
+                modalBooking &&
+                 <AdvertisementModal
+                 modalBooking={modalBooking}
+                 setModalBooking={setModalBooking}
+                 user={user}
+                 ></AdvertisementModal>
+             
+            }
+            
         </div>
     );
 };

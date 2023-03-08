@@ -17,9 +17,9 @@ const LogIn = () => {
     const from = location.state?.from?.pathname || '/';
 
     const [loginEmail, setLogInEmail] = useState('')
-    const[token] = useToken(loginEmail)
+    const [token] = useToken(loginEmail)
 
-    if(token){
+    if (token) {
         navigate(from, { replace: true });
     }
 
@@ -42,11 +42,33 @@ const LogIn = () => {
         loginProvider(googleProvider)
             .then(res => {
                 const user = res.user;
-                navigate(from, { replace: true });
+                const role = 'Buyer'
+                saveUserInfoInDataBase(user.displayName, user.email, role)
+
 
             })
             .catch(error => {
                 console.error(error);
+
+            })
+    }
+
+    //save users account info in my database
+    const saveUserInfoInDataBase = (name, email, role) => {
+        const user = { name, email, role }
+
+        fetch(`http://localhost:5000/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    setLogInEmail(email)
+                }
 
             })
     }

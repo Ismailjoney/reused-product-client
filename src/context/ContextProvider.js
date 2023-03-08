@@ -28,7 +28,7 @@ const ContextProvider = ({children}) => {
         return updateProfile(auth.currentUser, userInfo)
     }
     const logOut = () => {
-        // localStorage.removeItem('service-review');
+        localStorage.removeItem('resaleUserToken');
         return signOut(auth);
     }
 

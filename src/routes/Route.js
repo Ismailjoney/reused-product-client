@@ -7,11 +7,15 @@ import MyAddedProducts from "../dashBord/buyerOrder/sellerRoute/MyAddedProducts"
 import DashBordInfo from "../dashBord/dashBordInfo/DashBordInfo";
 import DashBordLayout from "../dashBord/dashBordLayout/DashBordLayout";
 import Main from "../layout/Main";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import LogIn from "../pages/login/LogIn";
 import Home from "../pages/page/Home";
 import AllProductcategoriesItems from "../pages/page/Home/productCategories/allProductcategoriesItems/AllProductcategoriesItems";
 import Regiestration from "../pages/regiestration/Regiestration";
+import AdminRoute from "./AdminRoute";
+import BuyerRoute from "./BuyerRoute";
 import PrivetRoute from "./PrivetRoute";
+import SellerRoute from "./SellerRoute";
 
 export const route=  createBrowserRouter([
     {
@@ -34,6 +38,10 @@ export const route=  createBrowserRouter([
             {
                 path:'/singup',
                 element:<Regiestration></Regiestration>
+            },
+            {
+                path:'*',
+                element : <ErrorPage></ErrorPage>
             }
              
 
@@ -50,24 +58,24 @@ export const route=  createBrowserRouter([
             },
             {
                 path:'/dashbord/myorder',
-                element:<BuyerOrder></BuyerOrder>,
+                element: <BuyerRoute><BuyerOrder></BuyerOrder></BuyerRoute>
                
             },
             {
                 path:'/dashbord/myaddedproducts',
-                element: <MyAddedProducts></MyAddedProducts>
+                element: <SellerRoute><MyAddedProducts></MyAddedProducts></SellerRoute>
             },
             {
                 path:'/dashbord/addyourproduct',
-                element: <AddMyProducts></AddMyProducts>
+                element:<SellerRoute><AddMyProducts></AddMyProducts></SellerRoute>
             },
             {
                 path:'/dashbord/allseller',
-                element:<AllSellers></AllSellers>
+                element:<AdminRoute><AllSellers></AllSellers></AdminRoute>
             },
             {
                 path:'/dashbord/allbuyer',
-                element: <AllBuyers></AllBuyers>
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             }
         ]
     }

@@ -1,14 +1,16 @@
-import { toast } from "react-toastify";
+import React from 'react';
+import { toast } from 'react-toastify';
+
+const AdvertisementModal = ({modalBooking,setModalBooking,user}) => {
+
+    const { product_name, selling_price, _id } =  modalBooking;
+    console.log(modalBooking)
 
 
-const BookingModal = ({ categorieItemDetails, setCategorieItemDetails, user }) => {
     
-    const { product_name, selling_price, _id, image} = categorieItemDetails;
-   
-
     const  handleBooking = event => {
         event.preventDefault();
-        setCategorieItemDetails(null)
+        setModalBooking(null)
         const form = event.target;
 
         const  displayName = user?.displayName;
@@ -20,7 +22,6 @@ const BookingModal = ({ categorieItemDetails, setCategorieItemDetails, user }) =
         const bookingDetails = {
             displayName,
             email,
-            image,
             customerMeetLocation,
             customerPhoneNumber,
             productname: product_name,
@@ -47,14 +48,22 @@ const BookingModal = ({ categorieItemDetails, setCategorieItemDetails, user }) =
             })
     }
 
+
+
+
+
+
     return (
-        <>
+        <div>
+            {/* The button to open modal */}
+
+
             {/* Put this part before </body> tag */}
-            < input type="checkbox" id="booking-modal" className="modal-toggle" />
-            <div className="modal ">
+            < input type="checkbox" id="advrtismentModalBooking" className="modal-toggle" />
+            <div className="modal">
                 <div className="modal-box relative">
-                    <label onClick={() => setCategorieItemDetails(null)} htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2  font-bold">✕</label>
-                    <h2 className="text-2xl text-center font-bold">Booking Info</h2>
+                    <label htmlFor="advrtismentModalBooking" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
 
                     <form onSubmit={handleBooking}>
                         <p>Product Name :</p>
@@ -66,18 +75,17 @@ const BookingModal = ({ categorieItemDetails, setCategorieItemDetails, user }) =
                         <p>Your Email:</p>
                         <input name="email" type="email" defaultValue={user?.email} placeholder="email" className="input input-bordered input-primary w-full mt-2" readOnly />
                         <p>Location :</p>
-                        <input name="location" type="text"   placeholder="location" className="input input-bordered input-primary w-full mt-2" required />
+                        <input name="location" type="text" placeholder="location" className="input input-bordered input-primary w-full mt-2" required />
                         <p>Phone Number :</p>
                         <input name="phone" type="phone" placeholder="phone number" className="input input-bordered input-primary w-full mt-2" required />
 
                         <input className='btn btn-primary mt-2 w-full' type="submit" value="Submit" />
 
                     </form>
-
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
-export default BookingModal;
+export default AdvertisementModal;

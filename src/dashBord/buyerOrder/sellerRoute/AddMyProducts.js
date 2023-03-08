@@ -38,7 +38,7 @@ const AddMyProducts = () => {
                         email: data.email,
                         product_name: data.productname,
                         condition: data.condition,
-                        categoryId: data.categorie,
+                        cid: data.categorie,
                         used_time: data.usedtime,
                         market_price: data.marketprice,
                         selling_price: data.sellingprice,
@@ -64,9 +64,7 @@ const AddMyProducts = () => {
                                 toast('Product Add  SuccessFull')
                             }
                         })
-
-                }
-                 
+                }    
             }) 
 
     }
@@ -120,7 +118,7 @@ const AddMyProducts = () => {
                             <span className="label-text font-semibold">Categorie</span>
                         </label>
                         <select {...register('categorie', { required: true })} className="select select-bordered w-full max-w-xs ">
-                            <option className='input input-bordered   my-2  ' value='categorie'>Select Categories</option>
+                            
                             {
                                 allCategories.map((allCategorie, i) =>  <option
                                 key={i}

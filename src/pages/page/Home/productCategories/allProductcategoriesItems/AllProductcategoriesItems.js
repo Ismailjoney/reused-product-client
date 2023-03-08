@@ -8,6 +8,7 @@ const AllProductcategoriesItems = () => {
     const categorieItems = useLoaderData()
     const [categorieItemDetails, setCategorieItemDetails] = useState(null)
     const {user} = useContext(AuthContext)
+    
 
     return (
         <div>

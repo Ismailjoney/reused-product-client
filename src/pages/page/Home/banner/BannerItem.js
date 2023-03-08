@@ -17,13 +17,13 @@ const BannerItem = ({ slide }) => {
                             'Wellcome To Our Website', // Types 'One'
                             3000, // Waits 1s
                             () => {
-                                console.log('Done typing!'); // Place optional callbacks anywhere in the array
+                                // console.log('Done typing!'); // Place optional callbacks anywhere in the array
                             }
                         ]}
                         wrapper="div"
                         cursor={true}
                         repeat={Infinity}
-                        style={{ fontSize: '2em' }}
+                        style={{ fontSize: '3em' }}
                         className='text-5xl font-bold text-emerald-50'
                     />
                     <h2 className=''></h2>

@@ -18,6 +18,23 @@ const MyAddedProducts = () => {
     })
 
 
+    //handdle advertisment
+    const handleAdvertisment = id => {
+        fetch(`http://localhost:5000/advertiseproduct/${id}`, {
+            method: 'PUT',
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('bikehutAccessToken')}`
+
+            // }
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                refetch()
+                toast.success('Product is Live on Ad Section')
+        })
+    }
+
     const handleDelete = (id) => {
         fetch(`http://localhost:5000/sellerproduct/${id}`, {
             method: 'DELETE',
@@ -32,7 +49,19 @@ const MyAddedProducts = () => {
                     toast.error('Delete SuccessFully')
             }
         })
-       
+    }
+
+    const handdleSold = id => {
+        console.log(id)
+        fetch(`http://localhost:5000/productsold/${id}`,{
+            method : 'PUT'
+        })
+        .then(res => res.json())
+        .then(data =>{
+            // console.log(data)
+            refetch()
+            toast('Product Sold')
+        })
     }
 
     if(isLoading){
@@ -48,6 +77,8 @@ const MyAddedProducts = () => {
                 key={myProduct._id}
                 myProduct={myProduct}
                 handleDelete={handleDelete}
+                handleAdvertisment={handleAdvertisment}
+                handdleSold={handdleSold}
                 ></MyAddedProductCard>)
             }
         </div>
