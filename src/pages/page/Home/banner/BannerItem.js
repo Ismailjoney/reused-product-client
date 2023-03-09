@@ -23,11 +23,11 @@ const BannerItem = ({ slide }) => {
                         wrapper="div"
                         cursor={true}
                         repeat={Infinity}
-                        style={{ fontSize: '3em' }}
-                        className='text-5xl font-bold text-emerald-50'
+                        // style={{ fontSize: '3em' }}
+                        className='text-2xl text-emerald-50 lg:font-bold lg:text-4xl'
                     />
-                    <h2 className=''></h2>
-                    <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tenetur vel mollitia itaque totam, numquam dolor vitae quaerat, optio provident temporibus odio laborum voluptates delectus sapiente amet soluta repellat facere?</p>
+                    
+                    <p className='mt-2  hidden  lg:block '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tenetur vel mollitia itaque totam, numquam dolor vitae quaerat, optio provident temporibus odio laborum voluptates delectus sapiente amet soluta repellat facere?</p>
                 </div>
             </div>
             <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-0">

@@ -9,6 +9,7 @@ import DashBordLayout from "../dashBord/dashBordLayout/DashBordLayout";
 import Main from "../layout/Main";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import LogIn from "../pages/login/LogIn";
+import Blog from "../pages/page/Blog/Blog";
 import Home from "../pages/page/Home";
 import AllProductcategoriesItems from "../pages/page/Home/productCategories/allProductcategoriesItems/AllProductcategoriesItems";
 import Regiestration from "../pages/regiestration/Regiestration";
@@ -25,6 +26,10 @@ export const route=  createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
             },
             {
                 path:'/allproductcategoriesitems/:id',

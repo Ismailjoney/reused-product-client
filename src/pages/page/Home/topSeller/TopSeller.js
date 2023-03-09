@@ -17,7 +17,7 @@ import SellerRatting from './SellerRatting';
 
 const TopSeller = () => {
     return (
-        <div className='my-40'>
+        <div className='my-20'>
             <h2 className="text-3xl  font-bold text-center my-4">Our Top Seller</h2>
             <p className='text-2xl text-center font-bold   my-8'>Here is a list of our top sellers. Last month's selected top sellers. We select each month's top rated sellers and put a poster with their picture on our website. If you want to see yourself on our website, provide all the information about your product. If you sell products and want to be seen on our website, you must be a top seller</p>
             <Swiper
@@ -25,14 +25,14 @@ const TopSeller = () => {
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
                 slidesPerView={3}
-                navigation
+                // navigation
                 pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
+                // scrollbar={{ draggable: true }}
                 // onSwiper={(swiper) => console.log('')}
                 // onSlideChange={() => console.log('chnge' )}
-                className='mt-10'
+                className='my-20 '
             >
-                <SwiperSlide>
+                <SwiperSlide className='mb-14'>
                     <img className="mask mask-circle" src={manone} alt="" />
                     <SellerRatting></SellerRatting>
                     <p className='text-center font-bold text-2xl'>Naim hasan</p>
@@ -68,7 +68,7 @@ const TopSeller = () => {
                     <p className='text-center font-bold text-2xl'>jacks</p>
                     <p className='text-center font-bold  '>Africa</p>
                 </SwiperSlide>
-                <p className='mt-10'>...</p>
+               
             </Swiper>
         </div>
 
