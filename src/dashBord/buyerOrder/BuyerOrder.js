@@ -11,7 +11,11 @@ const BuyerOrder = () => {
     const { data: bookingProducts, isLoading, refetch } = useQuery({
         queryKey: ['mybookings', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/mybookings?email=${user?.email}`)
+            const res = await fetch(`http://localhost:5000/mybookings?email=${user?.email}`,{
+                headers : {
+                    authorization : `bearer ${localStorage.getItem('resaleUserToken')}`
+                }
+            })
             const data = await res.json()
             return data;
         }
@@ -31,7 +35,6 @@ const BuyerOrder = () => {
                     toast.error('Order Delete SuccessFully')
                 }
             })
-
     }
 
     if (isLoading) {

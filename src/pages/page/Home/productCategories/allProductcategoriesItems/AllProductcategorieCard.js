@@ -5,6 +5,7 @@ import useSeller from '../../../../../hooks/useSeller';
 
 const AllProductcategorieCard = ({ categorieItem, setCategorieItemDetails }) => {
     const { condition, image,  information, selling_price, market_price, product_name, used_time,seller, sellerNumber,status } = categorieItem;
+    console.log(categorieItem)
 
     const {user} = useContext(AuthContext);
     const[isSeller] = useSeller(user?.email)
@@ -30,7 +31,7 @@ const AllProductcategorieCard = ({ categorieItem, setCategorieItemDetails }) => 
                 </div>
                 <h2 className="card-title">{product_name}</h2>
                 <div>
-                <p className='font-bold'>Condition : {seller}</p>
+                <p className='font-bold'>Seller: {seller}</p>
                 <p className='font-bold'> Phone : {sellerNumber}</p>
                 <p className='font-bold'>Condition : {condition}</p>
                 <p className='font-bold'> Sell price: {selling_price}</p>

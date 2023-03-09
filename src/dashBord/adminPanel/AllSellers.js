@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/ContextProvider';
 import Loading from '../../shared/loading/Loading';
 
@@ -29,6 +30,32 @@ const AllSellers = () => {
             })
     }
 
+
+
+    // const handleVerifySeller = (email) => {
+
+    //     fetch(`http://localhost:5000//verifyseller?email=${email}`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             authorization : `bearer ${localStorage.getItem('resaleUserToken')}`
+    //         }
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             if (data.modifiedCount > 0) {
+                    
+    //                 toast.success('SellerVerified')
+    //                 refetch()
+    //             }
+    //         })
+
+    // }
+
+
+
+
+
     if(isLoading){
         return <Loading></Loading>
     }
@@ -56,6 +83,7 @@ const AllSellers = () => {
                                 <td>{user.email}</td>
                                 <td>{user.role}</td>
                                 <td><button onClick={() => handdleSellerDelete(user._id)} className='btn btn-xs  btn-primary'>Delete</button></td>
+                                {/* <td><button onClick={() =>  handleVerifySeller(user._id)} className='btn btn-xs  btn-primary'>Verify Seller</button></td> */}
                             </tr>)
                         }
 
