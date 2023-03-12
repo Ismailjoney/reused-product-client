@@ -11,7 +11,7 @@ const AllProductcategorieCard = ({ categorieItem, setCategorieItemDetails }) => 
     const[isSeller] = useSeller(user?.email)
 
     return (
-        <div className="card  w-96 bg-base-100 shadow-xl sm:mt-7">
+        <div className="card  w-96 bg-base-100 shadow-xl mt-10">
             <figure><img className='w-full h-60' src={image} alt="product image" /></figure>
             <div className="card-body ">
                 <div>
