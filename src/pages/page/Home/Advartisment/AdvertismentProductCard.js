@@ -37,12 +37,12 @@ const AdvertismentProductCard = ({ advertiseProduct, setModalBooking, user }) =>
 
                 <div className="card-actions justify-end">
                     {
-                        isBuyer ?
+                       user?.email && isBuyer ?
                        <>
                         < label onClick={() => setModalBooking(advertiseProduct)} htmlFor="advrtismentModalBooking" className="btn btn-primary" > Book Now</label >
                        </>
                         :
-                        `you can't booked product becouse you are seller`
+                        <></>
                     }
                
                     
