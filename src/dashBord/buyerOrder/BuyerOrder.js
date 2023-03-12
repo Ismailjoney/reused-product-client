@@ -11,7 +11,7 @@ const BuyerOrder = () => {
     const { data: bookingProducts, isLoading, refetch } = useQuery({
         queryKey: ['mybookings', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/mybookings?email=${user?.email}`,{
+            const res = await fetch(`https://reused-product-server.vercel.app/mybookings?email=${user?.email}`,{
                 headers : {
                     authorization : `bearer ${localStorage.getItem('resaleUserToken')}`
                 }
@@ -24,7 +24,7 @@ const BuyerOrder = () => {
     console.log(bookingProducts)
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://reused-product-server.vercel.app/bookings/${id}`, {
             method: 'DELETE',
 
         })

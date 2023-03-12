@@ -11,7 +11,7 @@ const MyAddedProducts = () => {
     const {data: myProducts = [],isLoading ,refetch}  = useQuery({
         queryKey: ['sellerproduct', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/sellerproduct?email=${user?.email}`,{
+            const res = await fetch(`https://reused-product-server.vercel.app/sellerproduct?email=${user?.email}`,{
                 headers : {
                     authorization : `bearer ${localStorage.getItem('resaleUserToken')}`
                 }
@@ -24,7 +24,7 @@ const MyAddedProducts = () => {
 
     //handdle advertisment
     const handleAdvertisment = id => {
-        fetch(`http://localhost:5000/advertiseproduct/${id}`, {
+        fetch(`https://reused-product-server.vercel.app/advertiseproduct/${id}`, {
             method: 'PUT',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('bikehutAccessToken')}`
@@ -40,7 +40,7 @@ const MyAddedProducts = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/sellerproduct/${id}`, {
+        fetch(`https://reused-product-server.vercel.app/sellerproduct/${id}`, {
             method: 'DELETE',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('resaleUserToken')}`
@@ -57,7 +57,7 @@ const MyAddedProducts = () => {
 
     const handdleSold = id => {
         console.log(id)
-        fetch(`http://localhost:5000/productsold/${id}`,{
+        fetch(`https://reused-product-server.vercel.app/productsold/${id}`,{
             method : 'PUT'
         })
         .then(res => res.json())

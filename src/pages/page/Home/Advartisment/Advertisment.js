@@ -9,7 +9,7 @@ const Advertisment = () => {
     const [modalBooking, setModalBooking] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:5000/advertismentproduct')
+        fetch('https://reused-product-server.vercel.app/advertismentproduct')
             .then(res => res.json())
             .then(data => {
                 const products = data.filter(product => product.advertise === 'true');

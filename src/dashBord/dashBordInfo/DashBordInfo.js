@@ -6,7 +6,7 @@ const DashBordInfo = () => {
     const [userInfo, setUserInfo] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`)
+        fetch(`https://reused-product-server.vercel.app/users?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setUserInfo(data))
     }, [user?.email])

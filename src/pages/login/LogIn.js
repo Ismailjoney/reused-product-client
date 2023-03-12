@@ -57,7 +57,7 @@ const LogIn = () => {
     const saveUserInfoInDataBase = (name, email, role) => {
         const user = { name, email, role }
 
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://reused-product-server.vercel.app/users`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -112,7 +112,7 @@ const LogIn = () => {
                         </div>
                         <label className="label"> <span className="label-text">Forget password</span></label>
                     </div>
-                    <input className='btn btn-accent w-full' value="Login" type="submit" />
+                    <input className='btn btn-primary w-full' value="Login" type="submit" />
 
                 </form>
 

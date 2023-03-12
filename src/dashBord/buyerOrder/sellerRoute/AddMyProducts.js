@@ -49,7 +49,7 @@ const AddMyProducts = () => {
                     }
                     console.log(sellerInfo)
 
-                    fetch('http://localhost:5000/sellerproduct', {
+                    fetch('https://reused-product-server.vercel.app/sellerproduct', {
                         method: 'POST',
                         headers: {
                             "content-type": "application/json"
@@ -72,7 +72,7 @@ const AddMyProducts = () => {
     const { data: allCategories = [], } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/categories')
+            const res = await fetch('https://reused-product-server.vercel.app/categories')
             const data = await res.json()
             return data;
         }

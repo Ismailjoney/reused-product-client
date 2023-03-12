@@ -32,7 +32,7 @@ const AdvertisementModal = ({modalBooking,setModalBooking,user}) => {
 
 
 
-        fetch(`http://localhost:5000/productbooking`, {
+        fetch(`https://reused-product-server.vercel.app/productbooking`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

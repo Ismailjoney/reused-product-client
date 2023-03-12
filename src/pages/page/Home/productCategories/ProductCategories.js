@@ -7,7 +7,7 @@ const ProductCategories = () => {
     // const[catagories, setCategories] = useState([])
 
     // useEffect(() =>{
-    //     fetch(`http://localhost:5000/categories`)
+    //     fetch(`https://reused-product-server.vercel.app/categories`)
     //     .then(res => res.json())
     //     .then(data =>  setCategories(data))
     // },[])
@@ -15,7 +15,7 @@ const ProductCategories = () => {
      const {data : catagories, isLoading } = useQuery({
         queryKey : [],
         queryFn : async () => {
-            const res = await (fetch(`http://localhost:5000/categories`))
+            const res = await (fetch(`https://reused-product-server.vercel.app/categories`))
             const data = await res.json()
             return data;
         }

@@ -34,7 +34,7 @@ export const route=  createBrowserRouter([
             {
                 path:'/allproductcategoriesitems/:id',
                 element:<PrivetRoute><AllProductcategoriesItems></AllProductcategoriesItems></PrivetRoute>,
-                loader: ({params}) => (fetch(`http://localhost:5000/categoriesItems/${params.id}`))
+                loader: ({params}) => (fetch(`https://reused-product-server.vercel.app/categoriesItems/${params.id}`))
             },
             {
                 path:'/login',

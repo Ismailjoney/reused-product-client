@@ -11,7 +11,7 @@ const Regiestration = () => {
     const [singupError, setSingUpError] = useState('')
 
     const [createEmail, setCreateEmail] = useState('')
-    const [token] = useToken(createEmail)
+    const [token] = useToken(createEmail)// form use token
 
     const imageKey = process.env.REACT_APP_imagebb;
 
@@ -65,7 +65,7 @@ const Regiestration = () => {
 //save users account info in my database
 const saveUserInfoInDataBase = (name, role, email,image) => {
     const user = { name, role, email,image }
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://reused-product-server.vercel.app/users`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -82,22 +82,12 @@ const saveUserInfoInDataBase = (name, role, email,image) => {
 
 
     
-//token set in localstroage
-// const getUserToken = (email) => {
-//     fetch(`http://localhost:5000/jwt?email=${email}`)
-//         .then(res => res.json())
-//         .then(data => {
-//             if (data.accessToken) {
-//                 localStorage.setItem('resaleUserToken', data.accessToken)
-//                 navigate('/')
-//             }
-//         })
-// }
+ 
 
 return (
     <div className='h-[600px] w-full flex justify-center items-center'>
         <div>
-            <h2 className="text-center text-3xl font-bold my-2">SingUp Now</h2>
+            <h2 className="text-center text-3xl font-bold mt-12">SingUp Now</h2>
             <form onSubmit={handleSubmit(handdleSingIn)}>
                 <div>
                     <label className="label">
@@ -160,10 +150,10 @@ return (
                         singupError && <p className='text-red-600'>{singupError}</p>
                     }
                 </div>
-                <input className='btn btn-accent w-full mt-4' value="Singup" type="submit" />
+                <input className='btn btn-primary w-full mt-4' value="Singup" type="submit" />
             </form>
 
-            <p>Already have an account <Link className='text-secondary' to="/login">Please Login</Link></p>
+            <p>Already have an account <Link className='  text-secondary' to="/login">Please Login</Link></p>
             <div className="divider">OR</div>
             <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
         </div>

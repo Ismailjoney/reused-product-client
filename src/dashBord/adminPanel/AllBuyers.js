@@ -10,7 +10,7 @@ const AllBuyers = () => {
     const { data: users, isLoading,refetch } = useQuery({
         queryKey: ['buyer', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/allusers`)
+            const res = await fetch(`https://reused-product-server.vercel.app/allusers`)
             const data = await res.json()
             const buyers = data.filter(user => user.role === 'buyer')
 
@@ -22,7 +22,7 @@ const AllBuyers = () => {
 
 
         const handdleBuyerDelete = (id) => {
-            fetch(`http://localhost:5000/allusers/${id}`,{
+            fetch(`https://reused-product-server.vercel.app/allusers/${id}`,{
                 method : 'DELETE'
             })
             .then(res => res.json())

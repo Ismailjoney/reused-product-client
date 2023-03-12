@@ -10,7 +10,7 @@ const AllSellers = () => {
     const { data: users, isLoading, refetch } = useQuery({
         queryKey: ['seller', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/allusers`)
+            const res = await fetch(`https://reused-product-server.vercel.app/allusers`)
             const data = await res.json()
             const buyers = data.filter(user => user.role === 'seller')
 
@@ -19,7 +19,7 @@ const AllSellers = () => {
     })
 
     const handdleSellerDelete = id => {
-        fetch(`http://localhost:5000/allusers/${id}`, {
+        fetch(`https://reused-product-server.vercel.app/allusers/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -34,7 +34,7 @@ const AllSellers = () => {
 
     // const handleVerifySeller = (email) => {
 
-    //     fetch(`http://localhost:5000//verifyseller?email=${email}`, {
+    //     fetch(`https://reused-product-server.vercel.app//verifyseller?email=${email}`, {
     //         method: 'PUT',
     //         headers: {
     //             authorization : `bearer ${localStorage.getItem('resaleUserToken')}`
